@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import { v4 as uuid } from 'uuid';
 import imgg from "./images/DSC_0211.JPG"
+import {InputCurry} from './components/InputCurry'
 
 export const App = () => {
   // 変数関数たち
@@ -110,15 +111,19 @@ export const App = () => {
       <div>
         <p className="site-name">みんなのカレーライスの作り方講座</p>
       </div>
-      {/* カレータイトルインプット */}
-      <div className="curry-name-input-area">
-        <input placeholder="カレー名入力" onChange={onChangeCurryTitleText} value={curryTitleText}/><br/>
-      </div>  
-    {/* 材料名インプット */}
+
+      <InputCurry onChange={onChangeCurryTitleText} value={curryTitleText}/>
       <div>  
-        <input placeholder="材料名(Shift+Enter)" value={foodstuffText} onChange={onChangeFoodstuffText} onKeyPress={onKeyPressAddFoodstuff}/>
-        <input placeholder="分量(Shift+Enter)" value={amountText} onChange={onChangeAmountText} onKeyPress={onKeyPressAddFoodstuff}></input>
+        <input placeholder="材料名(Shift+Enter)"
+        value={foodstuffText} onChange={onChangeFoodstuffText}
+        onKeyPress={onKeyPressAddFoodstuff}/>
+        <input placeholder="分量(Shift+Enter)"
+        value={amountText} onChange={onChangeAmountText}
+        onKeyPress={onKeyPressAddFoodstuff}></input>
       </div>  
+       
+
+      
       
     {/* 食材リスト表示 */}
       <div>
@@ -167,7 +172,7 @@ export const App = () => {
                   <tr><td>{foodstuff.foodstuffName}</td><td>{foodstuff.amount}</td></tr>
                 )
               })}
-              <tr><th>No.</th><th>手順</th></tr>
+              <tr><th>手順</th>、、<th>作り方</th></tr>
               {completeRecipe.completeProcessList.map((process) => {
                 return(
                   <tr><td>{process.num}</td><td>{process.ProcessName}</td></tr>
