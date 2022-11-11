@@ -1,5 +1,6 @@
 import React from 'react';
 //コンポーネント化(exportが必要)
+//カレー題名入力
 export const InputCurry = (props) => {
     const { onChange, value } = props;
     return(

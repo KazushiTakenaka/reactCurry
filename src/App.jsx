@@ -3,6 +3,7 @@ import "./styles.css";
 import { v4 as uuid } from 'uuid';
 import imgg from "./images/DSC_0211.JPG"
 import {InputCurry} from './components/InputCurry'
+import {InputFoodstuff} from './components/InputFoodstuff'
 
 export const App = () => {
   // 変数関数たち
@@ -113,6 +114,7 @@ export const App = () => {
       </div>
 
       <InputCurry onChange={onChangeCurryTitleText} value={curryTitleText}/>
+      <InputFoodstuff processList={processList} onClickprocessEdit={onClickprocessEdit}  onClickProcessDelete={onClickProcessDelete}/>
       <div>  
         <input placeholder="材料名(Shift+Enter)"
         value={foodstuffText} onChange={onChangeFoodstuffText}
