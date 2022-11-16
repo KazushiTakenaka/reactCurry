@@ -114,15 +114,11 @@ export const App = () => {
       </div>
 
       <InputCurry onChange={onChangeCurryTitleText} value={curryTitleText}/>
-      <InputFoodstuff processList={processList} onClickprocessEdit={onClickprocessEdit}  onClickProcessDelete={onClickProcessDelete}/>
-      <div>  
-        <input placeholder="材料名(Shift+Enter)"
-        value={foodstuffText} onChange={onChangeFoodstuffText}
-        onKeyPress={onKeyPressAddFoodstuff}/>
-        <input placeholder="分量(Shift+Enter)"
-        value={amountText} onChange={onChangeAmountText}
-        onKeyPress={onKeyPressAddFoodstuff}></input>
-      </div>  
+      <div><p>食材入力</p></div>
+      {/* <InputProcess processList={processList} onClickprocessEdit={onClickprocessEdit}  onClickProcessDelete={onClickProcessDelete}/> */}
+
+      <InputFoodstuff foodstuffText={foodstuffText} onChangeFoodstuffText={onChangeFoodstuffText} onKeyPressAddFoodstuff={onKeyPressAddFoodstuff} amountText={amountText} onChangeAmountText={onChangeAmountText}  />
+      
        
 
       
@@ -174,7 +170,7 @@ export const App = () => {
                   <tr><td>{foodstuff.foodstuffName}</td><td>{foodstuff.amount}</td></tr>
                 )
               })}
-              <tr><th>手順</th>、、<th>作り方</th></tr>
+              <tr><th>手順</th><th>作り方</th></tr>
               {completeRecipe.completeProcessList.map((process) => {
                 return(
                   <tr><td>{process.num}</td><td>{process.ProcessName}</td></tr>
